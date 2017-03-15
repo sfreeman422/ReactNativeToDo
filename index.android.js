@@ -14,6 +14,8 @@ import {
   View
 } from 'react-native';
 
+import InteractiveArea from "./components/InteractiveArea";
+
 export default class todo extends Component {
   constructor(props){
     super(props);
@@ -33,9 +35,7 @@ export default class todo extends Component {
         <Text style={styles.instructions}>
           A to-do list based upon the Pomodoro method.
         </Text>
-          <TextInput style={styles.input} placeholder="Enter your next big thing here.">
-          </TextInput>
-          <ListView dataSource={this.state.dataSource} renderRow={(rowData)=><Text style={styles.instructions}>{rowData}</Text>} />
+        <InteractiveArea data={this.state.dataSource} />
       </View>
     );
   }
@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     color: 'white',
-    backgroundColor: 'green',
   }
 });
 
