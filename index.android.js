@@ -10,11 +10,20 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  ScrollView,
+  ListView,
   View
 } from 'react-native';
 
 export default class todo extends Component {
+  constructor(props){
+    super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+
+    this.state = {
+      text: "",
+      dataSource: ds.cloneWithRows(["Mow the Lawn", "Fire Romano from his Job", "Teach Andrew How to Read", "Eat Spaghetti", "Debate Politics with Lebage", "Code", "More Code", "Code Again"])
+  };
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -24,89 +33,9 @@ export default class todo extends Component {
         <Text style={styles.instructions}>
           A to-do list based upon the Pomodoro method.
         </Text>
-        <ScrollView style={styles.instructions}>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-         <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-          <Text style={styles.instructions}>
-          To do
-          </Text>
-        </ScrollView>
+          <TextInput style={styles.input} placeholder="Enter your next big thing here.">
+          </TextInput>
+          <ListView dataSource={this.state.dataSource} renderRow={(rowData)=><Text style={styles.instructions}>{rowData}</Text>} />
       </View>
     );
   }
@@ -115,7 +44,6 @@ export default class todo extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
   },
@@ -130,6 +58,12 @@ const styles = StyleSheet.create({
     color: 'white',
     marginBottom: 5,
   },
+  input: {
+    fontSize: 15,
+    textAlign: 'center',
+    color: 'white',
+    backgroundColor: 'green',
+  }
 });
 
 AppRegistry.registerComponent('todo', () => todo);
