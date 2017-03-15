@@ -23,7 +23,7 @@ export default class todo extends Component {
 
     this.state = {
       text: "",
-      dataSource: ds.cloneWithRows(["Mow the Lawn", "Fire Romano from his Job", "Teach Andrew How to Read", "Eat Spaghetti", "Debate Politics with Lebage", "Code", "More Code", "Code Again"])
+      dataSource: ds.cloneWithRows(["Mow the Lawn", "Fire Romano from his Job", "Teach Andrew How to Read", "Eat Spaghetti", "Debate Politics with Lebage", "Code", "More Code", "Code Again", "Talk to Your Friend", "Eat Dessert", "Go to Work", "Play Overwatch", "Netflix", "Reddit", "Blah"])
   };
   }
   render() {
