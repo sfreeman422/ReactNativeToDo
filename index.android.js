@@ -9,6 +9,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  TextInput,
+  ScrollView,
   View
 } from 'react-native';
 
@@ -22,6 +24,89 @@ export default class todo extends Component {
         <Text style={styles.instructions}>
           A to-do list based upon the Pomodoro method.
         </Text>
+        <ScrollView style={styles.instructions}>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+         <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+          <Text style={styles.instructions}>
+          To do
+          </Text>
+        </ScrollView>
       </View>
     );
   }
